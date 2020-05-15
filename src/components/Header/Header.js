@@ -11,6 +11,7 @@ const Header = () => {
     justifyContent: "space-between",
     position: "sticky",
     top: 0,
+    zIndex: 200,
   };
   return (
     <header className="header" style={headerStyle}>

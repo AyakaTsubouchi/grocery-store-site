@@ -2,5 +2,8 @@
   text-decoration: none;
 }
 .full-height {
-  height: 100vh;
+  height: 65vh;
+}
+.container {
+  margin-top: 20px;
 }

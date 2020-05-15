@@ -8,8 +8,8 @@ const Footer = ({ storeData }) => {
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    position: "sticky",
-    bottom: 0,
+    // position: "sticky",
+    // bottom: 0,
   };
 
   return (

@@ -11,9 +11,9 @@ const Products = ({ newShopping, productsData }) => {
     return (
       <div style={{ width: "25%", margin: "10px" }}>
         <li key={product.id}>
-          <div class="ui link cards">
-            <div class="card" style={{ height: "300px" }}>
-              <div class="image">
+          <div className="ui link cards">
+            <div className="card" style={{ height: "300px" }}>
+              <div className="image">
                 <img
                   src={product.imgSrc}
                   alt={product.name}
@@ -24,9 +24,9 @@ const Products = ({ newShopping, productsData }) => {
                   }}
                 />
               </div>
-              <div class="content">
-                <div class="header">{product.name}</div>
-                <div class="description">
+              <div className="content">
+                <div className="header">{product.name}</div>
+                <div className="description">
                   <p>${product.price}</p>
                 </div>
               </div>
@@ -38,7 +38,7 @@ const Products = ({ newShopping, productsData }) => {
   });
 
   return (
-    <div className="ui container full-height">
+    <div className="ui container">
       <h3>Products</h3>
       <ul
         style={{
@@ -46,6 +46,7 @@ const Products = ({ newShopping, productsData }) => {
           padding: 0,
           fontSize: "15px",
           display: "flex",
+          flexWrap: "wrap",
         }}>
         {linkList}
       </ul>

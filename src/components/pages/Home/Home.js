@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <div className="ui container center full-height">
-      <img src={imgSrc[count]} alt="happy dining" />
+      <img src={imgSrc[count]} alt="happy dining" style={{ height: "80%" }} />
     </div>
   );
 };

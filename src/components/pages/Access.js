@@ -20,7 +20,7 @@ const Access = ({ storeData }) => {
           alt={storeData.address}
           style={mapStyle}></iframe>
       </div>
-      <div style={{ paddingTop: "15%", margin: "10px" }}>
+      <div style={{ paddingTop: "5%", margin: "10px" }}>
         <ul>
           <li>{storeData.address}</li>
           <li>{storeData.tell}</li>
