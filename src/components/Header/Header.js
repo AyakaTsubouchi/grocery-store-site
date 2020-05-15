@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import { connect } from "react-redux";
 
-const Header = () => {
+const Header = ({ storeData }) => {
   const headerStyle = {
-    backgroundColor: "red",
-    color: "white",
+    backgroundColor: "#FFF",
+    color: "#CC0000",
+    border: "1px solid #CC0000",
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
@@ -17,15 +19,23 @@ const Header = () => {
     <header className="header" style={headerStyle}>
       <div className="ui container">
         <div className="navLeft">
-          <Link to="/" style={{ color: "white" }}>
-            <h1>Kim's Mart</h1>
+          <Link to="/" style={{ color: "#CC0000" }}>
+            <h1>{storeData.name}</h1>
           </Link>
         </div>
         <div className="navRight">
           <Navbar />
         </div>
       </div>
+      <div className="ui divide"></div>
     </header>
   );
 };
-export default Header;
+
+const mapStateToProps = (state) => {
+  return {
+    storeData: state.storeData,
+  };
+};
+
+export default connect(mapStateToProps)(Header);

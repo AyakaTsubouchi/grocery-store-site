@@ -9,7 +9,7 @@ export default function Navbar() {
           to={item.url}
           className="btn　non-deco"
           activeClassName={item.active}
-          style={{ color: "white" }}>
+          style={{ color: "#CC0000" }}>
           {item.title}
         </NavLink>
       </li>

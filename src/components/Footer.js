@@ -3,13 +3,12 @@ import { connect } from "react-redux";
 
 const Footer = ({ storeData }) => {
   const footerStyle = {
-    backgroundColor: "red",
+    // backgroundColor: "#184B9F",
+    backgroundColor: "#CC0000",
     color: "white",
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    // position: "sticky",
-    // bottom: 0,
   };
 
   return (

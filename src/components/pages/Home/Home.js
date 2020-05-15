@@ -1,31 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
-const Home = () => {
-  const imgSrc = [
-    "https://scontent.fyvr4-1.fna.fbcdn.net/v/t1.0-9/52472027_2183054601755537_3314480713918578688_n.jpg?_nc_cat=105&_nc_sid=dd9801&_nc_ohc=r5_FkV_awz0AX_gjVZ-&_nc_ht=scontent.fyvr4-1.fna&oh=a90f8ee1911e7a5fd30aab432fbb966e&oe=5EE369CD",
-    "https://s3-media0.fl.yelpcdn.com/bphoto/wT337OQdOts4e35CKSUXSg/o.jpg",
-    "https://scontent.fyvr4-1.fna.fbcdn.net/v/t1.0-9/52472027_2183054601755537_3314480713918578688_n.jpg?_nc_cat=105&_nc_sid=dd9801&_nc_ohc=r5_FkV_awz0AX_gjVZ-&_nc_ht=scontent.fyvr4-1.fna&oh=a90f8ee1911e7a5fd30aab432fbb966e&oe=5EE369CD",
-    "https://s3-media0.fl.yelpcdn.com/bphoto/wT337OQdOts4e35CKSUXSg/o.jpg",
-  ];
-
+const Home = ({ storeData }) => {
+  const imgSrc = storeData.imgSrc;
   const [count, setCount] = useState(0);
 
+  //showing the store images
   useEffect(() => {
-    //I tried to show pictures looply.
-    if (count > imgSrc.length - 1) {
-      setCount(0);
-    }
     const intervalId = setInterval(() => {
-      setCount((count) => count + 1);
+      setCount((count) => (count + 1) % imgSrc.length);
     }, 3000);
     return () => clearInterval(intervalId);
   }, []);
 
   return (
     <div className="ui container center full-height">
-      <img src={imgSrc[count]} alt="happy dining" style={{ height: "80%" }} />
+      <img src={imgSrc[count]} alt="happy shopping" style={{ height: "80%" }} />
     </div>
   );
 };
-
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    storeData: state.storeData,
+  };
+};
+export default connect(mapStateToProps)(Home);
